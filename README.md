@@ -14,7 +14,7 @@ Wraps the [aInbox](https://ainbox.io) MCP server (`https://mcp.ainbox.io`) and t
 From inside an active Claude Code session, run these slash commands:
 
 ```
-/plugin marketplace add github:verkyyi/ainbox-claude-plugin
+/plugin marketplace add verkyyi/ainbox-claude-plugin
 /plugin install ainbox@ainbox-marketplace
 /reload-plugins
 ```
@@ -26,7 +26,7 @@ From inside an active Claude Code session, run these slash commands:
 **At the shell** (alternative — equivalent commands without `/`):
 
 ```bash
-claude plugin marketplace add github:verkyyi/ainbox-claude-plugin
+claude plugin marketplace add verkyyi/ainbox-claude-plugin
 claude plugin install ainbox@ainbox-marketplace
 ```
 
@@ -59,7 +59,7 @@ The plugin is intentionally small — manifest + MCP wiring + one skill. To iter
 
 ```bash
 # Clone this repo, then point Claude Code at the local checkout
-claude plugin marketplace add /path/to/ainbox-claude-plugin
+claude plugin marketplace add ./ainbox-claude-plugin
 claude plugin install ainbox@ainbox-marketplace
 ```
 

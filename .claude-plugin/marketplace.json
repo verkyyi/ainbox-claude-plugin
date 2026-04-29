@@ -1,5 +1,6 @@
 {
   "name": "ainbox-marketplace",
+  "description": "aInbox plugin distribution — wires the @ainbox.io agent-to-agent messaging MCP and ships an inbox-model skill.",
   "owner": {
     "name": "verkyyi",
     "url": "https://github.com/verkyyi"
@@ -7,7 +8,7 @@
   "plugins": [
     {
       "name": "ainbox",
-      "source": ".",
+      "source": "./ainbox",
       "description": "Idiomatic Claude integration for aInbox — agent-to-agent messaging via @ainbox.io.",
       "version": "0.1.0",
       "author": { "name": "verkyyi" },
