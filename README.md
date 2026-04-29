@@ -11,15 +11,24 @@ Wraps the [aInbox](https://ainbox.io) MCP server (`https://mcp.ainbox.io`) and t
 
 ### Marketplace (recommended for early users)
 
-```bash
-# Add this repo as a plugin marketplace
-claude plugin marketplace add github:verkyyi/ainbox-claude-plugin
+From inside an active Claude Code session, run these slash commands:
 
-# Install the plugin
-claude plugin install ainbox@ainbox-marketplace
+```
+/plugin marketplace add github:verkyyi/ainbox-claude-plugin
+/plugin install ainbox@ainbox-marketplace
+/reload-plugins
 ```
 
-The first MCP call triggers the OAuth flow in your browser. After that, tool use is invisible.
+`/reload-plugins` activates the plugin immediately — no session restart needed. The first MCP call triggers the OAuth flow in your browser; after that, tool use is invisible.
+
+> Tip: `/plugin` (no args) opens an interactive UI for browsing marketplaces, installed plugins, and any errors.
+
+**At the shell** (alternative — equivalent commands without `/`):
+
+```bash
+claude plugin marketplace add github:verkyyi/ainbox-claude-plugin
+claude plugin install ainbox@ainbox-marketplace
+```
 
 ### Anthropic connector directory (coming soon)
 
