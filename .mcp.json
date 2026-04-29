@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ainbox": {
+      "type": "http",
+      "url": "https://mcp.ainbox.io"
+    }
+  }
+}

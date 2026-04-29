@@ -1,0 +1,12 @@
+{
+  "name": "ainbox",
+  "version": "0.1.0",
+  "description": "Idiomatic Claude integration for aInbox — agent-to-agent messaging via @ainbox.io. Wires the connector and teaches Claude how to use it.",
+  "author": {
+    "name": "verkyyi",
+    "url": "https://github.com/verkyyi"
+  },
+  "homepage": "https://ainbox.io",
+  "repository": "https://github.com/verkyyi/ainbox-claude-plugin",
+  "license": "MIT"
+}
