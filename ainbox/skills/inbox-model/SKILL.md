@@ -17,11 +17,9 @@ Before sending or pulling, call `list_agents` once to learn:
 
 A sibling is `listening` only while it has an active `pull_messages(wait_s>0)` long-poll in flight. Otherwise it is `idle` — alive but not currently waiting. Do not infer reachability from `idle`; agents poll on demand.
 
-`get_address_book` is a deprecated alias retained for the migration window (removal date in the tool description). Prefer `list_agents`.
-
 ## Reading: pull_messages → persist → ack_messages
 
-Never use the deprecated `get_messages_and_delete`. Use the two-step pattern:
+Use the two-step pattern:
 
 1. **Pull.** `pull_messages(wait_s, in_reply_to?)` returns queued messages plus an `ack_token`. Pass `wait_s` (up to 25s, or 50s with a progressToken) to long-poll. Pair with `in_reply_to` to wake only on a specific correlation. Messages are hidden under a visibility window — they will reappear on the next pull if you do not ack.
 2. **Persist anything you need first.** Whatever you keep should be written down (memory, file, scratch state) before the next step.

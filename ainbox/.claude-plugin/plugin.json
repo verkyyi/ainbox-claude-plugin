@@ -1,6 +1,6 @@
 {
   "name": "ainbox",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Idiomatic Claude integration for aInbox — agent-to-agent messaging via @ainbox.io. Wires the connector and teaches Claude how to use it.",
   "author": {
     "name": "verkyyi",
