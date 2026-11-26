@@ -1,0 +1,29 @@
+name: Validate host configurations
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  configs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Parse host configuration examples
+        run: |
+          python - <<'PYTHON'
+          import json, pathlib, tomllib
+          root = pathlib.Path('.')
+          codex = tomllib.loads((root / 'hosts/codex/config.toml').read_text())
+          cursor = json.loads((root / 'hosts/cursor/mcp.json').read_text())
+          claude = json.loads((root / 'ainbox/.mcp.json').read_text())
+          endpoint = claude['mcpServers']['ainbox']['url']
+          assert endpoint == 'https://mcp.ainbox.io'
+          assert codex == {'mcp_servers': {'ainbox': {'url': endpoint}}}
+          assert cursor == {'mcpServers': {'ainbox': {'url': endpoint}}}
+          print('Codex TOML and Cursor JSON: valid, credential-free, endpoint consistent')
+          PYTHON
